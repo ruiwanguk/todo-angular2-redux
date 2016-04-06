@@ -1,5 +1,5 @@
 
-import {Component, Inject, onDestory} from 'angular2/core';
+import  {Component, Inject, OnDestroy} from 'angular2/core';
 import {ToDoItem} from './toDoItem'
 
 @Component({
@@ -12,8 +12,10 @@ import {ToDoItem} from './toDoItem'
         </ul>
     `
 })
-export class ToDoList implements OnDestory{
+export class ToDoList implements OnDestroy{
+
     toDoItems: ToDoItem[];
+    unsubscribe: Function;
 
     constructor(@Inject('AppStore') private appStore: AppStore) {
         this.unsubscribe = this.appStore.subscribe(() => {
@@ -22,7 +24,7 @@ export class ToDoList implements OnDestory{
         });
     }
 
-    private ngOnDestory() {
+    ngOnDestroy() {
         this.unsubscribe();
     }
 }

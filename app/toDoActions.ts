@@ -9,7 +9,8 @@ export class ToDoActions {
         return {
             type: ADD_TODO,
             id: this.idCounter++,
-            text: text
+            text: text,
+            completed: false
         }
     }
 }

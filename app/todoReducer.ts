@@ -3,7 +3,7 @@ import {ToDoItem} from './toDoItem';
 import * as ToDoActions from './toDoActions'
 
 const initialStates = {
-    todos: ToDoItem[] = []
+    todos: []
 };
 
 export function toDoReducer(state = initialStates, action) {
