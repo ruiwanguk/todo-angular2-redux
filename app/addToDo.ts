@@ -5,7 +5,7 @@ import {ToDoActions} from './toDoActions';
     selector: 'add-todo',
     template:`
         <input #toDoInput>
-        <button (click)="addToDo(toDoInput.value)">Add todo</button>
+        <button (click)="addToDo(toDoInput)">Add todo</button>
     `
 })
 export class AddToDo {
@@ -14,8 +14,9 @@ export class AddToDo {
                 private todoActions: ToDoActions) {
     }
 
-    addToDo(text: string) {
-        let action = this.todoActions.addToDo(text);
+    addToDo(input) {
+        let action = this.todoActions.addToDo(input.value);
         this.appStore.dispatch(action);
+        input.value = '';
     }
 }

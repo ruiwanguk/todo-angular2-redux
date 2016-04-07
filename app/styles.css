@@ -17,6 +17,17 @@ body, input[text], button {
     font-family: Cambria, Georgia;
 }
 
+.active {
+    text-decoration: default;
+}
+
+.inactive {
+    text-decoration: none;
+}
+
+.completed {
+    text-decoration: line-through;
+}
 /*
  * See https://github.com/angular/angular.io/blob/master/public/docs/_examples/styles.css
  * for the full set of master styles used by the documentation samples
